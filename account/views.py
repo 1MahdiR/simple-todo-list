@@ -75,6 +75,9 @@ def register(req):
             
 def user_login(req):
 
+    if req.user.is_authenticated:
+        return HttpResponseRedirect(reverse("account:dashboard"))
+
     if req.method == "POST":
 
         next_url = req.POST.get('next','/')
