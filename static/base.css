@@ -1,0 +1,123 @@
+
+body {
+	background-image: linear-gradient(to right, #77ACF1, #3EDBF0, #77ACF1);
+}
+
+.header-seper {
+
+	width: 100%;
+	background-color: #F0EBCC;
+	height: 5px;
+}
+
+.header-body {
+
+	padding: 35px;
+	width: 100%;
+	background-color: #04009A;
+	box-shadow: 0 3px 5px grey;
+}
+
+.header-title {
+
+	width: 30%;
+}
+
+.header-title h2,a {
+	
+	display: inline;
+	color: white;
+}
+
+.header-slogan {
+
+	width: 30%;
+}
+
+.header-slogan h4 {
+	
+	display: inline;
+	margin-top: 5px;
+	margin-left: 20px;
+	color: cyan;
+}
+
+.header-user {
+
+	float: right;
+	margin-top: -50px;
+}
+
+.header-user .user {
+
+	border-color: #F0EBCC;
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 5px;
+	margin: 7px;
+	color: white;
+	padding: 10px;
+	box-shadow: 0 0 0px white;
+}
+
+.header-user .user:hover {
+
+	box-shadow: 0 0 15px white;
+	animation-name: user_button;
+	animation-duration: 0.5s;
+}
+
+@keyframes user_button {
+
+	from {box-shadow: 0 0 0px white;}
+	to {box-shadow: 0 0 15px white;}
+}
+
+.header-user p {
+
+	color: white;
+	font-width: bold;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.header-user a:hover {
+
+	color: white;
+}
+
+.footer-body {
+
+	position: fixed;
+	display: block;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #04009A;
+	text-align: center;
+	color: white;
+}
+
+.footer-body .lefts {
+
+	padding-top: 1%;
+}
+
+.footer-body a {
+
+	color: white;
+	text-decoration: none;
+}
+
+.footer-body a:hover {
+
+	color: white;
+	text-decoration: none;
+}
+
+.footer-body a:active {
+
+	color: white;
+}
+
+

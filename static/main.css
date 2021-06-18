@@ -1,0 +1,80 @@
+
+.main-body {
+
+	height: 100%;
+	padding: 8%;
+}
+
+.main-body h1 {
+	
+	font-size: 96px;
+	color: white;
+	font-color: white;
+	font-weight: bold;
+	width: 50%;
+}
+
+.main-body .btn {
+
+	padding: 50px;
+	background-color: #F0EBCC;
+	position: absolute;
+	right: 15%;
+	width: 20%;
+	border: 5px solid white;
+	border-radius: 10px;
+	font-size: 32px;
+	color: #04009A;
+}
+
+.main-body .btn:hover {
+
+	box-shadow: 0 0 10px grey;
+	color: #04009A;
+}
+
+.main-body .btn:active {
+
+	box-shadow: 0 0 0 grey;
+	color: #04009A;
+}
+
+.main-body .task-btn {
+
+	margin-top: -21%;
+}
+
+.main-body .prj-btn {
+
+	margin-top: -11%;
+}
+
+@media only screen and (max-width: 550px) {
+
+	
+	.main-body .btn {
+
+		float: left;
+		width: 90%;
+		padding: 30px;
+		left: 5%;
+		margin-top: 10%;
+	}
+
+	.main-body .prj-btn {
+
+		margin-top: 45%;
+	}
+
+	.main-body h1 {
+	
+		font-size: 80px;
+	}
+
+	.main-body {
+
+		height: 1000px;
+	}
+}
+
+

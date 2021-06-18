@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!-- base html for all pages -->
+<!-- Ray (__mr__) -->
+
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>{% block title %}{% endblock %}</title>
+		<meta name="description" content="Page with empty content" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		
+		<link rel="stylesheet" href="{% static 'base/base.css' %}" />
+		{% block ccss %}{% endblock %}
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	</head>
+	<body>
+		<div class="header-seper"><span></span></div>
+		<div class="header-body">
+			<div class="header-title">
+				<a href="{% url 'main' %}">
+					<h2>Simple todo-list</h2>
+				</a>
+			</div>
+			<div class="header-slogan">
+				<h4>Your very own todo-list</h4>
+			</div>
+
+			{% if request.user.is_authenticated %}
+			<div class="header-user">
+				<p>Hello <a href="{% url 'account:dashboard' %}">{{ user.username }}</a></p>
+				<a class="user" href="{% url 'account:logout' %}">
+					sign out
+				</a>
+				<a class="user" href="{% url 'account:profile' %}">
+					edit profile
+				</a>
+			</div>
+			{% else %}
+			<div class="header-user">
+				<a class="user" href="{% url 'account:login' %}">
+					sign-in
+				</a>
+				<a class="user" href="{% url 'account:register' %}">
+					sign-up
+				</a>
+			</div>
+			{% endif %}
+		</div>
+		{% block content %}{% endblock %}
+		<div class="footer-body">
+			<p class="lefts">All lefts reserved.</p>
+			<p><a href="https://github.com/1MahdiR/">Github <i class="fa fa-heart"></i></a></p>
+		</div>
+	</body>
+</html>

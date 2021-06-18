@@ -1,0 +1,60 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sign-up{% endblock %}
+{% block ccss %}<link rel="stylesheet" href="{% static 'account/register.css' %}" />{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="sign-up-body col-lg-6">
+			<span class="fa-stack fa-lg user-icon">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i style="color:#77ACF1;" class="fa fa-user fa-stack-1x fa-inverse"></i>
+			</span>
+			<form method="post">
+				<h1>Sign-up</h1>
+				{% csrf_token %}
+				
+				<div class="first_name form-group">
+					<label>First name:
+						{{ user_form.first_name }}
+					</label>
+				</div>
+				<div class="last_name form-group">
+					<label>Last name:
+						{{ user_form.last_name }}
+					</label>
+				</div>
+				<div class="username form-group">
+					<label>Username:
+						{{ user_form.username }}
+					</label>
+				</div>
+				<div class="email form-group">
+					<label>Email:
+						{{ user_form.email }}
+					</labe>
+				</div>
+				<div class="password form-group">
+					<label>Password:
+						{{ user_form.password }}
+					</label>
+				</div>
+				<div class="password_con form-group">
+					<label>Password confirm:
+						{{ user_form.password2 }}
+					</label>
+				</div>
+				<div class="submit">
+					<input class="btn btn-primary" type="submit" value="Sign-up" />
+				</div>
+				{% if message %}
+					<div class="alert alert-danger">
+					    <strong>{{ message|escape }}</strong>
+					</div>
+				{% endif %}
+			</form>
+		</div>
+	</div>
+{% endblock %}

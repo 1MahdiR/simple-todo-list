@@ -5,13 +5,15 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django import forms
+from django.db import IntegrityError
 
-from .forms import LoginForm, UserRegisterationForm, UserEditForm
+from .forms import LoginForm, UserRegistrationForm, UserEditForm 
 
 @login_required
 def dashboard(req):
 
-    user = User.objects.get(profile_user=req.user)
+    user = User.objects.get(username=req.user.username)
     
     return render(req, 'account/dashboard.html', {'user':user})
 
@@ -47,9 +49,10 @@ def edit_profile(req):
 
 def register(req):
 
+    message = None
     if req.method == "POST":
 
-        user_form = UserRegisterationForm(req.POST)
+        user_form = UserRegistrationForm(req.POST)
         if user_form.is_valid():
 
             cd = user_form.cleaned_data
@@ -59,25 +62,31 @@ def register(req):
             new_user_username = cd['username']
             new_user_email = cd['email']
 
-            new_user = User.objects.create(first_name=new_user_first_name,
-                                    last_name=new_user_last_name,
-                                    username=new_user_username,
-                                    email=new_user_email)
-            new_user.set_password(cd['password'])
-            new_user.save()
+            try:
+                new_user = User.objects.create(first_name=new_user_first_name,
+                					last_name=new_user_last_name,
+                					username=new_user_username,
+                					email=new_user_email)
+                new_user.set_password(cd['password'])
+                new_user.save()
 
-            login(req, new_user)
-            return HttpResponseRedirect(reverse("account:dashboard"))
+                login(req, new_user)
+                return HttpResponseRedirect(reverse("account:dashboard"))
+            except IntegrityError as e:
+                message = "This username is already taken!"
+        else:
+        	message = "Invalid form!"
     else:
-        user_form = UserRegisterationForm()
+        user_form = UserRegistrationForm()
 
-    return render(req, 'account/register.html', {'user_form':user_form})
+    return render(req, 'account/register.html', {'user_form':user_form, 'message':message})
             
 def user_login(req):
 
     if req.user.is_authenticated:
         return HttpResponseRedirect(reverse("account:dashboard"))
 
+    message = None
     if req.method == "POST":
 
         next_url = req.POST.get('next','/')
@@ -93,15 +102,15 @@ def user_login(req):
                     else:
                         return HttpResponseRedirect(reverse("account:dashboard"))
                 else:
-                    return render(req, "account/not_active_error.html", {})
+                    message = "User is not active!"
             else:
-                return render(req, "account/login_failed.html", {})
+                message = "Your username or password is incorrect!"
         else:
-            return render(req, "account/Invalid_form.html", {})
+            message = "Invalid form!"
     else:
         form = LoginForm()
 
-    return render(req, "account/login.html", {'form':form})
+    return render(req, "account/login.html", {'form':form, 'message':message})
 
 def user_logout(req):
     logout(req)

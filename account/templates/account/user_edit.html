@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Edit profile{% endblock %}
+{% block ccss %}<link rel="stylesheet" href="{% static 'account/user_edit.css' %}" />{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="edit-profile-body col-lg-6">
+			<span class="fa-stack fa-lg user-icon">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i style="color:#77ACF1;" class="fa fa-user fa-stack-1x fa-inverse"></i>
+			</span>
+			<form method="post">
+				<h1>Edit profile</h1>
+				{% csrf_token %}
+				<div class="first_name form-group">
+					<label>first name
+						{{ edit_form.first_name }}
+					</label>
+				</div>
+				<div class="last_name form-group">
+					<label>last name
+						{{ edit_form.last_name }}
+					</label>
+				</div>
+				<div class="email form-group">
+					<label>email
+						{{ edit_form.email }}
+					</label>
+				</div>
+				<div class="submit">
+					<input class="btn btn-primary" type="submit" value="save changes" />
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}

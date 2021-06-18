@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sign-in{% endblock %}
+{% block ccss %}<link rel="stylesheet" href="{% static '/account/login.css' %}" />{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="login-body col-lg-6">
+			<span class="fa-stack fa-lg user-icon">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i style="color:#77ACF1;" class="fa fa-user fa-stack-1x fa-inverse"></i>
+			</span>
+			<form method="post">
+				<h1>Sign-in</h1>
+				{% csrf_token %}
+				<input type="hidden" name="next" value="{{ request.GET.next }}"/>
+				<div class="username form-group">
+					<label>Username:
+					{{ form.username }}
+					</label>
+				</div>
+				<div class="password form-group">
+					<label>Password:
+					{{ form.password }}
+					</label>
+				</div>
+				<div class="submit">
+					<input class="btn btn-primary" type="submit" value="sign-in" />
+					<a class="btn btn-primary" href="{% url 'account:register' %}" />Create new account</a>
+				</div>
+				{% if message %}
+					<div class="alert alert-danger">
+					    <strong>{{ message|escape }}</strong>
+					</div>
+				{% endif %}
+			</form>
+		</div>
+	</div>
+{% endblock %}

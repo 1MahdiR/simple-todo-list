@@ -1,0 +1,63 @@
+
+.container {
+	
+	height: 840px;
+}
+
+.dashboard-body {
+
+	background-color: #77ACF1;
+	margin-top: 90px;
+	margin-left: 25%;
+	margin-right: 25%;	
+	border-color: #F0EBCC;
+	border-width: 5px;
+	border-radius: 8px;
+	border-style: solid;
+	padding: 25px;
+	box-shadow: 0 8px 10px grey;
+}
+
+.dashboard-body .btn {
+
+	width: 100%;
+	margin-top: 20px;
+}
+
+.dashboard-body table {
+
+	margin-top: 20px;
+}
+
+.table-text {
+	
+	font-weight: bold;
+	color: #F0EBCC;
+}
+
+@media only screen and (max-width: 800px) {
+
+
+	.container {
+		
+		height: 800px;
+	}
+	
+	.dashboard-body { 
+		
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+
+
+	.container {
+		
+		height: 900px;
+	}
+	
+	.dashboard-body { 
+		width: 65%;
+	}
+}

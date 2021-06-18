@@ -1,0 +1,57 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dashboard{% endblock %}
+{% block ccss %}<link rel="stylesheet" href="{% static 'account/dashboard.css' %}" />{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="dashboard-body">
+			<table class="table">
+				<tr>
+					<td class="table-text">First name</td>
+					<td class="table-text">{{ user.first_name }}</td>
+				</tr>
+				<tr>
+					<td class="table-text">Last name</td>
+					<td class="table-text">{{ user.last_name }}</td>
+				</tr>
+				<tr>
+					<td class="table-text">Username</td>
+					<td class="table-text">{{ user.username }}</td>
+				</tr>
+				<tr>
+					<td class="table-text">Email</td>
+					<td class="table-text">{{ user.email }}</td>
+				</tr>
+				<tr>
+					<td class="table-text">Status</td>
+					{% if user.is_active %}
+					<td class="table-text">Active</td>
+					{% else %}
+					<td class="table-text">Inactive</td>
+					{% endif %}
+				</tr>
+				<tr>
+					<td class="table-text">Tasks created</td>
+					<td class="table-text">0</td>
+				</tr>
+				<tr>
+					<td class="table-text">Tasks done</td>
+					<td class="table-text">0</td>
+				</tr>
+				<tr>
+					<td class="table-text">Projects created</td>
+					<td class="table-text">0</td>
+				</tr>
+				<tr>
+					<td class="table-text">Projects done</td>
+					<td class="table-text">0</td>
+				</tr>
+			</table>
+			<a href="#"><input class="btn btn-primary" type="submit" value="Start a task"/></a>
+			<a href="#"><input class="btn btn-primary" type="submit" value="Start a projects" /></a>
+		</div>
+	</div>
+{% endblock %}
