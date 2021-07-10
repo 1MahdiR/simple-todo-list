@@ -1,0 +1,89 @@
+.container {
+
+	height: 840px;
+}
+
+.add-task-body {
+
+	background-color: #77ACF1;
+	margin-top: 90px;
+	margin-left: 25%;
+	margin-right: 25%;	
+	border-color: #F0EBCC;
+	border-width: 5px;
+	border-radius: 8px;
+	border-style: solid;
+	padding: 25px;
+	box-shadow: 0 8px 10px grey;
+}
+
+.add-task-body .user-icon {
+
+	font-size: 32px;
+	color: #F0EBCC;
+	margin-left: 43%;
+}
+
+.add-task-body h1 {
+
+	color: white;
+	font-weight: bold;
+	margin-left: 35%;
+	margin-top: 0px;
+
+}
+
+.add-task-body .form-group label {
+
+	font-size: 22px;
+	color: white;
+	width: 100%;
+}
+
+.alert {
+
+	margin-top: 20px;
+}
+
+.add-task-body .add-icon {
+	
+	font-size: 38px;
+	color: #F0EBCC;
+	margin-left: 47%;
+}
+
+.btn {
+
+	width: 100%;
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+@media only screen and (max-width: 1200px) {
+
+
+	.add-task-body h1 {
+		margin-left: 31%;
+	}
+
+	.add-task-body .add-icon {
+
+		margin-left: 46%;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+
+
+	.add-task-body h1 {
+		margin-left: 14%;
+		font-size: 28px;
+	}
+
+	.add-task-body .add-icon {
+
+		margin-left: 40%;
+	}
+}
+
+
