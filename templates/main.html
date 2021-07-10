@@ -9,11 +9,11 @@
 	<div class="main-body">
 		<h1>Stop</br>thinking</br>and start</br>doing!</h1>
 
-		<a><div class="btn task-btn">
+		<a href="{% url 'todo:add_task' %}"><div class="btn task-btn">
 			Start a task
 		</div></a>
 
-		<a><div class="btn prj-btn">
+		<a href="{% url 'todo:add_project' %}"><div class="btn prj-btn">
 			Start a project
 		</div></a>
 	</div>

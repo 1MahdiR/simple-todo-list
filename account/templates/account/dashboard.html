@@ -50,8 +50,8 @@
 					<td class="table-text">0</td>
 				</tr>
 			</table>
-			<a href="{% url 'todo:add' %}"><input class="btn btn-primary" type="submit" value="Start a task"/></a>
-			<a href="#"><input class="btn btn-primary" type="submit" value="Start a projects" /></a>
+			<a href="{% url 'todo:add_task' %}"><input class="btn btn-primary" type="submit" value="Start a task"/></a>
+			<a href="{% url 'todo:add_project' %}"><input class="btn btn-primary" type="submit" value="Start a projects" /></a>
 		</div>
 	</div>
 {% endblock %}
