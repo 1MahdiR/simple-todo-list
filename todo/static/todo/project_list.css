@@ -119,4 +119,14 @@
 
 		margin-left: 42%;
 	}
+
+  .date-submit {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .date-deadline {
+    width: 100%;
+    font-size: 14px;
+  }
 }
