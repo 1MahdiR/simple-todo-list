@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Projects{% endblock %}
+{% block ccss %}<link rel="stylesheet" href="{% static 'todo/project_list.css' %}"/>{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="list-body col-lg-12">
+      <span class="fa-stack fa-lg pencil-icon">
+        <i class="fa fa-pencil-square-o fa-stack-2x"></i>
+      </span>
+      <h1>Projects:</h1>
+      <div class="list_container">
+        {% if project_list %}
+          {% for project in project_list %}
+            {% if project.isDone %}
+            <div class="project-body" style="border-color:#2d929c">
+            {% else %}
+            <div class="project-body">
+            {% endif %}
+              <h2>{{ project.name }}</h2>
+              <div class="project-description">
+                <p>{{ project.description }}</p>
+              </div>
+              <div class="project-dates">
+
+                <p class="date-submit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-square"></i>
+                  </span>
+                  <b>Submit date:</b> {{ project.submitDate }}
+                </p>
+                {% if project.deadline %}
+                  <p class="date-deadline">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-check-square"></i>
+                    </span>
+                    <b>Deadline:</b> {{ project.deadline }}
+                  </p>
+                {% endif %}
+              </div>
+              <div class="project-is-done">
+                <form method="post">
+                  <input type="hidden" name="user" value="{{ request.user.username }}"/>
+                  <input type="hidden" name="project_id" value="{{ project.id }}"/>
+                  {% csrf_token %}
+                  {% if not project.isDone %}
+                    <input class="btn btn-primary" type="submit" value="finish project"/>
+                  {% else %}
+                    <input class="btn btn-primary" type="submit" value="undone project"/>
+                  {% endif %}
+                </form>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <h2>No projects yet!</h2>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

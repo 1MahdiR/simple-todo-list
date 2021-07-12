@@ -1,0 +1,122 @@
+.container {
+  height: 0px;
+}
+
+.list-body {
+
+	background-color: #77ACF1;
+	margin-top: 120px;
+	margin-right: 25%;
+  margin-bottom: 190px;
+	border-color: #e0f2ff;
+	border-width: 5px;
+	border-radius: 8px;
+	border-style: solid;
+	padding: 25px;
+	box-shadow: 0 8px 10px grey;
+}
+
+.list-body .pencil-icon {
+
+	font-size: 32px;
+	color: #e0f2ff;
+	margin-left: 46%;
+}
+
+.list-body h1 {
+
+	color: white;
+	font-weight: bold;
+	margin-left: 41.5%;
+
+}
+
+.project-body {
+
+	background-color: #adcdff;
+	margin-top: 20px;
+	border-color: #e0f2ff;
+	border-width: 5px;
+	border-radius: 8px;
+	border-style: solid;
+	padding: 25px;
+  padding-top: 0px;
+	box-shadow: 0 0px 0px grey;
+}
+
+.project-body:hover {
+
+	box-shadow: 0 2px 10px grey;
+  animation-name: project_body_animation;
+  animation-duration: 0.5s;
+}
+
+@keyframes project_body_animation {
+  from {box-shadow: 0 0 0px grey;}
+	to {box-shadow: 0 2px 10px grey;}
+}
+
+.project-body h2 {
+  color: #1d2ee0;
+	font-weight: bold;
+}
+
+.project-body .project-description p {
+  color: #606cdb;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.date-submit {
+  color: #2d929c;
+  font-size: 16px;
+  width: 50%;
+  display: inline-block;
+}
+
+.date-deadline {
+  color: #732d9c;
+  font-size: 16px;
+  width: 49%;
+  display: inline-block;
+}
+
+.project-is-done .btn {
+
+	font-size: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .list-body {
+    margin-left: 20%;
+  }
+
+	.list-body h1 {
+		margin-left: 32%;
+	}
+
+	.list-body .pencil-icon {
+
+		margin-left: 42%;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+
+  .list-body {
+    width: 100%;
+    margin-left: 0%;
+  }
+
+
+	.list-body h1 {
+		margin-left: 33%;
+		font-size: 28px;
+	}
+
+	.list-body .pencil-icon {
+
+		margin-left: 42%;
+	}
+}
