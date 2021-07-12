@@ -44,7 +44,20 @@ def add_project(req):
 def task_list(req, project_id):
     pass
 
+@login_required
 def project_list(req):
-
-    list_project = Project.objects.all()
-    return render(req, 'todo/project_list.html', { project_list:'project_list' })
+    if req.method == "POST":
+        username = req.POST.get('user')
+        project_pk = req.POST.get('project_id')
+        user = req.user
+        if username == user.username:
+            project = None
+            try:
+                project = Project.objects.get(pk=project_pk)
+            except Project.DoesNotExist:
+                pass
+            if project and project.user == user:
+                project.isDone = False if project.isDone else True
+                project.save()
+    project_list = Project.objects.filter(user=req.user).order_by("-submitDate")
+    return render(req, 'todo/project_list.html', { 'project_list':project_list })
