@@ -40,3 +40,11 @@ def add_project(req):
         form = AddProjectForm()
 
     return render(req, 'todo/add_project.html', {'form':form})
+
+def task_list(req, project_id):
+    pass
+
+def project_list(req):
+
+    list_project = Project.objects.all()
+    return render(req, 'todo/project_list.html', { project_list:'project_list' })
