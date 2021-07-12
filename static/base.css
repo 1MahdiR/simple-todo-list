@@ -90,8 +90,13 @@ body {
 	margin-bottom: 20px;
 }
 
-.header-user a:hover {
+.header-user a {
+	color: #77ACF1;
 
+}
+
+.header-user a:hover {
+	text-decoration: none;
 	color: white;
 }
 
@@ -127,4 +132,35 @@ body {
 .footer-body a:active {
 
 	color: white;
+}
+
+@media only screen and (max-width: 550px) {
+
+	.header-title {
+		width: 100%;
+	}
+
+	.header-slogan {
+		width: 100%;
+	}
+
+	.header-body {
+		height: 390px;
+	}
+
+	.header-user {
+		margin-top: 50px;
+		width: 100%;
+	}
+
+	.header-btn {
+		width: 100%;
+	}
+
+  .header-btn a {
+		display:inline-block;
+		width: 40%;
+		padding: 0px;
+		font-size: 18px;
+	}
 }
