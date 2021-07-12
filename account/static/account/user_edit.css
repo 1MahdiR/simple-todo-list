@@ -58,14 +58,20 @@
 
 @media only screen and (max-width: 550px) {
 
+	.edit-profile-body {
+		widht: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 180px;
+	}
 
 	.edit-profile-body h1 {
-		margin-left: 12%;
+		margin-left: 30%;
 		font-size: 28px;
 	}
 
 	.edit-profile-body .user-icon {
 
-		margin-left: 32%;
+		margin-left: 42%;
 	}
 }
