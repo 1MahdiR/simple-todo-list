@@ -1,0 +1,92 @@
+.container {
+
+	height: 840px;
+}
+
+.add-project-body {
+
+	background-color: #77ACF1;
+	margin-top: 90px;
+	margin-left: 25%;
+	margin-right: 25%;
+	border-color: #F0EBCC;
+	border-width: 5px;
+	border-radius: 8px;
+	border-style: solid;
+	padding: 25px;
+	box-shadow: 0 8px 10px grey;
+}
+
+.add-project-body .user-icon {
+
+	font-size: 32px;
+	color: #F0EBCC;
+	margin-left: 43%;
+}
+
+.add-project-body h1 {
+
+	color: white;
+	font-weight: bold;
+	margin-left: 35%;
+	margin-top: 0px;
+
+}
+
+.add-project-body .form-group label {
+
+	font-size: 22px;
+	color: white;
+	width: 100%;
+}
+
+.alert {
+
+	margin-top: 20px;
+}
+
+.form-group .date-edit {
+
+  padding-bottom: 35px;
+}
+
+.add-project-body .add-icon {
+
+	font-size: 38px;
+	color: #F0EBCC;
+	margin-left: 47%;
+}
+
+.btn {
+
+	width: 100%;
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+@media only screen and (max-width: 1200px) {
+
+
+	.add-Projects-body h1 {
+		margin-left: 31%;
+	}
+
+	.add-project-body .add-icon {
+
+		margin-left: 46%;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+
+
+	.add-project-body h1 {
+		margin-left: 14%;
+		font-size: 28px;
+	}
+
+	.add-project-body .add-icon {
+
+		margin-left: 40%;
+	}
+}

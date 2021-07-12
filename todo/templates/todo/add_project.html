@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Add task{% endblock %}
+{% block ccss %}<link rel="stylesheet" href="{% static 'todo/add_project.css' %}"/>{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="add-project-body col-lg-6">
+
+    <form method="post">
+      <span class="fa-stack fa-lg user-icon-2x add-icon">
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+      </span>
+      <h1>Add Project</h1>
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label>Project name:
+        {{ form.name }}
+        </label>
+      </div>
+      <div class="form-group">
+        <label>Project description:
+        {{ form.description }}
+        </label>
+      </div>
+      <div class="form-group">
+        <label>Project deadline:
+        {{ form.deadline }}
+        </label>
+      </div>
+      <input class="btn btn-primary" type="submit" value="Add Project"/>
+    </form>
+  </div>
+</div>
+{% endblock %}
