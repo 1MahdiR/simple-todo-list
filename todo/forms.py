@@ -16,4 +16,4 @@ class AddTaskForm(forms.Form):
 class AddProjectForm(forms.Form):
     name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
     description = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    deadline = forms.DateField(widget=forms.DateInput(attrs={'type':'date', 'class':'form-control', 'value':timezone.now().strftime("%Y/%m/%d")}))
+    deadline = forms.DateField(required=False, widget=forms.DateInput(attrs={'type':'date', 'class':'form-control date-edit', 'value':timezone.now().strftime("%Y/%m/%d")}))
