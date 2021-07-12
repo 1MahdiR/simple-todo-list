@@ -6,7 +6,7 @@
 }
 
 .main-body h1 {
-	
+
 	font-size: 96px;
 	color: white;
 	font-color: white;
@@ -17,7 +17,7 @@
 .main-body .btn {
 
 	padding: 50px;
-	background-color: #F0EBCC;
+	background-color: #e0f2ff;
 	position: absolute;
 	right: 15%;
 	width: 20%;
@@ -51,7 +51,7 @@
 
 @media only screen and (max-width: 550px) {
 
-	
+
 	.main-body .btn {
 
 		float: left;
@@ -67,7 +67,7 @@
 	}
 
 	.main-body h1 {
-	
+
 		font-size: 80px;
 	}
 
@@ -76,5 +76,3 @@
 		height: 1000px;
 	}
 }
-
-

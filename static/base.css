@@ -24,7 +24,7 @@ body {
 }
 
 .header-title h2,a {
-	
+
 	display: inline;
 	color: white;
 }
@@ -35,7 +35,7 @@ body {
 }
 
 .header-slogan h4 {
-	
+
 	display: inline;
 	margin-top: 5px;
 	margin-left: 20px;
@@ -60,7 +60,16 @@ body {
 	box-shadow: 0 0 0px white;
 }
 
-.header-user .user:hover {
+.header-user p {
+	width: 95%;
+
+}
+
+.header-user .header-btn {
+	display: inline;
+}
+
+.header-user .header-btn .user:hover {
 
 	box-shadow: 0 0 15px white;
 	animation-name: user_button;
@@ -119,5 +128,3 @@ body {
 
 	color: white;
 }
-
-

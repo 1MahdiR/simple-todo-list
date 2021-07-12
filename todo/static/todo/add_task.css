@@ -8,20 +8,13 @@
 	background-color: #77ACF1;
 	margin-top: 90px;
 	margin-left: 25%;
-	margin-right: 25%;	
-	border-color: #F0EBCC;
+	margin-right: 25%;
+	border-color: #e0f2ff;
 	border-width: 5px;
 	border-radius: 8px;
 	border-style: solid;
 	padding: 25px;
 	box-shadow: 0 8px 10px grey;
-}
-
-.add-task-body .user-icon {
-
-	font-size: 32px;
-	color: #F0EBCC;
-	margin-left: 43%;
 }
 
 .add-task-body h1 {
@@ -46,9 +39,9 @@
 }
 
 .add-task-body .add-icon {
-	
+
 	font-size: 38px;
-	color: #F0EBCC;
+	color: #e0f2ff;
 	margin-left: 47%;
 }
 
@@ -85,5 +78,3 @@
 		margin-left: 40%;
 	}
 }
-
-

@@ -9,7 +9,7 @@
 	margin-top: 90px;
 	margin-left: 25%;
 	margin-right: 25%;
-	border-color: #F0EBCC;
+	border-color: #e0f2ff;
 	border-width: 5px;
 	border-radius: 8px;
 	border-style: solid;
@@ -17,18 +17,11 @@
 	box-shadow: 0 8px 10px grey;
 }
 
-.add-project-body .user-icon {
-
-	font-size: 32px;
-	color: #F0EBCC;
-	margin-left: 43%;
-}
-
 .add-project-body h1 {
 
 	color: white;
 	font-weight: bold;
-	margin-left: 35%;
+	margin-left: 32%;
 	margin-top: 0px;
 
 }
@@ -53,7 +46,7 @@
 .add-project-body .add-icon {
 
 	font-size: 38px;
-	color: #F0EBCC;
+	color: #e0f2ff;
 	margin-left: 47%;
 }
 
@@ -67,8 +60,8 @@
 @media only screen and (max-width: 1200px) {
 
 
-	.add-Projects-body h1 {
-		margin-left: 31%;
+	.add-project-body h1 {
+		margin-left: 19%;
 	}
 
 	.add-project-body .add-icon {
@@ -81,7 +74,7 @@
 
 
 	.add-project-body h1 {
-		margin-left: 14%;
+		margin-left: 4%;
 		font-size: 28px;
 	}
 

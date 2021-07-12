@@ -35,13 +35,22 @@
 
 			{% if request.user.is_authenticated %}
 			<div class="header-user">
-				<p>Hello <a href="{% url 'account:dashboard' %}">{{ user.username }}</a></p>
-				<a class="user" href="{% url 'account:logout' %}">
-					sign out
-				</a>
-				<a class="user" href="{% url 'account:profile' %}">
-					edit profile
-				</a>
+
+				<p dir="rtl">Hello <a href="{% url 'account:dashboard' %}">{{ user.username }}</a></p>
+				<div class="header-btn">
+					<a class="user" href="{% url 'todo:add_task' %}">
+						add task
+					</a>
+					<a class="user" href="{% url 'todo:add_project' %}">
+						add project
+					</a>
+					<a class="user" href="{% url 'account:profile' %}">
+						edit profile
+					</a>
+					<a class="user" href="{% url 'account:logout' %}">
+						sign out
+					</a>
+				</div>
 			</div>
 			{% else %}
 			<div class="header-user">

@@ -5,8 +5,8 @@
 	background-color: #77ACF1;
 	margin-top: 120px;
 	margin-left: 25%;
-	margin-right: 25%;	
-	border-color: #F0EBCC;
+	margin-right: 25%;
+	border-color: #e0f2ff;
 	border-width: 5px;
 	border-radius: 8px;
 	border-style: solid;
@@ -17,7 +17,7 @@
 .edit-profile-body .user-icon {
 
 	font-size: 32px;
-	color: #F0EBCC;
+	color: #e0f2ff;
 	margin-left: 43%;
 }
 
@@ -69,4 +69,3 @@
 		margin-left: 32%;
 	}
 }
-

@@ -1,6 +1,6 @@
 
 .container {
-	
+
 	height: 840px;
 }
 
@@ -9,8 +9,8 @@
 	background-color: #77ACF1;
 	margin-top: 90px;
 	margin-left: 25%;
-	margin-right: 25%;	
-	border-color: #F0EBCC;
+	margin-right: 25%;
+	border-color: #e0f2ff;
 	border-width: 5px;
 	border-radius: 8px;
 	border-style: solid;
@@ -30,21 +30,21 @@
 }
 
 .table-text {
-	
+
 	font-weight: bold;
-	color: #F0EBCC;
+	color: #e0f2ff;
 }
 
 @media only screen and (max-width: 800px) {
 
 
 	.container {
-		
+
 		height: 800px;
 	}
-	
-	.dashboard-body { 
-		
+
+	.dashboard-body {
+
 		width: 50%;
 	}
 }
@@ -53,11 +53,11 @@
 
 
 	.container {
-		
+
 		height: 900px;
 	}
-	
-	.dashboard-body { 
+
+	.dashboard-body {
 		width: 65%;
 	}
 }
