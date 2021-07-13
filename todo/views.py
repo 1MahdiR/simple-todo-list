@@ -20,7 +20,7 @@ def add_task(req):
 
             new_task = Task.objects.create(name=cd['name'], description=cd['description'], doer=cd['doer'],
                                     isDone=False, project=project, user=req.user)
-        return HttpResponseRedirect(reverse("account:dashboard"))
+        return HttpResponseRedirect(reverse("todo:task_list"))
     else:
         form = AddTaskForm()
 
@@ -35,7 +35,7 @@ def add_project(req):
             cd = form.cleaned_data
             print(cd)
             new_project = Project.objects.create(name=cd['name'], description=cd['description'], deadline=cd['deadline'], user=req.user)
-        return HttpResponseRedirect(reverse("account:dashboard"))
+        return HttpResponseRedirect(reverse("todo:project_list"))
     else:
         form = AddProjectForm()
 
