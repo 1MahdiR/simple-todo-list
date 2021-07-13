@@ -61,3 +61,11 @@ def project_list(req):
                 project.save()
     project_list = Project.objects.filter(user=req.user).order_by("-submitDate")
     return render(req, 'todo/project_list.html', { 'project_list':project_list })
+
+@login_required
+def get_projects(req):
+    username = req.GET.get('username')
+    projects = list()
+    if req.user.username == username:
+        projects = Project.objects.filter(user=req.user)
+    return render(req, 'todo/get_projects.html', { 'projects':projects })

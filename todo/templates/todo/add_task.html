@@ -15,7 +15,7 @@
 				</span>
 				<h1>Add Task</h1>
 				{% csrf_token %}
-				
+
 				<div class="form-group">
 					<label>Task name:
 					{{ form.name }}
@@ -41,4 +41,22 @@
 		</div>
 	</div>
 {% endblock %}
+{% block script %}
+<script>
+	$("#select_project").ready(function () {
 
+		var url = "{% url 'todo:get_projects' %}";
+		var categoryId = $(this).val();
+
+		$.ajax({
+			url: url,
+			data: {
+				'username': '{{ request.user.username }}'
+			},
+			success: function (data) {
+				$("#select_project").html(data);
+			}
+		});
+	});
+</script>
+{% endblock %}
