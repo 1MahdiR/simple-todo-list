@@ -20,7 +20,9 @@
 
 .dashboard-body .btn {
 
-	width: 100%;
+	width: 45%;
+	margin-right: 3%;
+	margin-left: 1%;
 	margin-top: 20px;
 }
 
@@ -62,4 +64,10 @@
 		margin-right: 0;
 		width: 100%;
 	}
+
+	.dashboard-body .btn {
+
+		width: 100%;
+	}
+
 }

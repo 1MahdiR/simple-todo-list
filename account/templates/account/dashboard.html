@@ -52,6 +52,8 @@
 			</table>
 			<a href="{% url 'todo:add_task' %}"><input class="btn btn-primary" type="submit" value="Start a task"/></a>
 			<a href="{% url 'todo:add_project' %}"><input class="btn btn-primary" type="submit" value="Start a projects" /></a>
+			<a href="{% url 'todo:task_list' %}"><input class="btn btn-primary" type="submit" value="Task list" /></a>
+			<a href="{% url 'todo:project_list' %}"><input class="btn btn-primary" type="submit" value="Project list" /></a>
 		</div>
 	</div>
 {% endblock %}
