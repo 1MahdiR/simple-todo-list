@@ -35,19 +35,19 @@
 				</tr>
 				<tr>
 					<td class="table-text">Tasks created</td>
-					<td class="table-text">0</td>
+					<td class="table-text">{{ tasks }}</td>
 				</tr>
 				<tr>
 					<td class="table-text">Tasks done</td>
-					<td class="table-text">0</td>
+					<td class="table-text">{{ tasks_done }}</td>
 				</tr>
 				<tr>
 					<td class="table-text">Projects created</td>
-					<td class="table-text">0</td>
+					<td class="table-text">{{ projects }}</td>
 				</tr>
 				<tr>
 					<td class="table-text">Projects done</td>
-					<td class="table-text">0</td>
+					<td class="table-text">{{ projects_done }}</td>
 				</tr>
 			</table>
 			<a href="{% url 'todo:add_task' %}"><input class="btn btn-primary" type="submit" value="Start a task"/></a>

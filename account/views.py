@@ -8,22 +8,31 @@ from django.urls import reverse
 from django import forms
 from django.db import IntegrityError
 
-from .forms import LoginForm, UserRegistrationForm, UserEditForm 
+from .forms import LoginForm, UserRegistrationForm, UserEditForm
+from todo.models import Project, Task
 
 @login_required
 def dashboard(req):
 
     user = User.objects.get(username=req.user.username)
-    
-    return render(req, 'account/dashboard.html', {'user':user})
+    projects = len(Project.objects.filter(user=user))
+    projects_done = len(Project.objects.filter(user=user,isDone=True))
+    tasks = len(Task.objects.filter(user=user))
+    tasks_done = len(Task.objects.filter(user=user,isDone=True))
+
+    return render(req, 'account/dashboard.html', {'user':user,
+                                                'projects_done':projects_done,
+                                                'projects':projects,
+                                                'tasks_done':tasks_done,
+                                                'tasks':tasks})
 
 @login_required
 def edit_profile(req):
 
     user = req.user
-    
+
     data = {
-        
+
         'first_name':user.first_name,
         'last_name':user.last_name,
         'email':user.email,
@@ -80,7 +89,7 @@ def register(req):
         user_form = UserRegistrationForm()
 
     return render(req, 'account/register.html', {'user_form':user_form, 'message':message})
-            
+
 def user_login(req):
 
     if req.user.is_authenticated:
@@ -115,4 +124,3 @@ def user_login(req):
 def user_logout(req):
     logout(req)
     return HttpResponseRedirect(reverse("account:login"))
-
