@@ -9,7 +9,7 @@ class AddTaskForm(forms.Form):
     name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
     description = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
     doer = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    project = forms.ChoiceField(choices=((0, "No project"),), widget=forms.Select(attrs={'id':'select_project', 'class':'form-control'}))
+    project = forms.Field(widget=forms.Select(attrs={'id':'select_project', 'class':'form-control'}))
 
 class AddProjectForm(forms.Form):
     name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
