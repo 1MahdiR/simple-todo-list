@@ -77,8 +77,11 @@ def project_list(req):
             except Project.DoesNotExist:
                 pass
             if project and project.user == user:
-                project.isDone = False if project.isDone else True
-                project.save()
+                if req.POST.get('delete'):
+                    project.delete()
+                else:
+                    project.isDone = False if project.isDone else True
+                    project.save()
     project_list = Project.objects.filter(user=req.user).order_by("-submitDate")
     return render(req, 'todo/project_list.html', { 'project_list':project_list })
 
