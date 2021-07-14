@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Projects{% endblock %}
+{% block ccss %}<link rel="stylesheet" href="{% static 'todo/task_list.css' %}"/>{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="list-body col-lg-12">
+      <span class="fa-stack fa-lg pencil-icon">
+        <i class="fa fa-pencil fa-stack-2x"></i>
+      </span>
+      <h1>Tasks:</h1>
+      <div class="list_container">
+        {% if task_list %}
+          {% for task in task_list %}
+            {% if task.isDone %}
+            <div class="task-body" style="border-color:#2d929c">
+            {% else %}
+            <div class="task-body">
+            {% endif %}
+              <h2>{{ task.name }}</h2>
+              <div class="task-description">
+                <p>{{ task.description }}</p>
+              </div>
+              <div class="task-doer">
+                <p>
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-user"></i>
+                  </span>
+                  <b>Task doer:</b> {{ task.doer }}
+                </p>
+              </div>
+              <div class="task-project">
+                <p>
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-pencil-square-o"></i>
+                  </span>
+                  {% if task.project %}
+                    <b>Task project:</b> <a href="#">{{ task.project.name }}</a>
+                  {% else %}
+                    <b>Task project:</b> No project
+                  {% endif %}
+                </p>
+              </div>
+              <div class="task-dates">
+
+                <p class="date-submit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-square"></i>
+                  </span>
+                  <b>Submit date:</b> {{ task.submitDate }}
+                </p>
+                {% if task.deadline %}
+                  <p class="date-deadline">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-check-square"></i>
+                    </span>
+                    <b>Deadline:</b> {{ task.deadline }}
+                  </p>
+                {% endif %}
+              </div>
+              <div class="task-is-done">
+                <form method="post">
+                  <input type="hidden" name="user" value="{{ request.user.username }}"/>
+                  <input type="hidden" name="task_id" value="{{ task.id }}"/>
+                  {% csrf_token %}
+                  {% if not task.isDone %}
+                    <input class="btn btn-primary" type="submit" value="finish task"/>
+                  {% else %}
+                    <input class="btn btn-primary" type="submit" value="undone task"/>
+                  {% endif %}
+                </form>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <h2>No projects yet!</h2>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
