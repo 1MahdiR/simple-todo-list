@@ -81,6 +81,24 @@
   display: inline-block;
 }
 
+.project-delete {
+
+  width: 14%;
+  display: inline-block;
+  float: none;
+}
+
+.project-delete .btn {
+
+	font-size: 20px;
+}
+
+.project-is-done {
+
+  width: 16%;
+  display: inline-block;
+}
+
 .project-is-done .btn {
 
 	font-size: 20px;
@@ -125,6 +143,11 @@
 		margin-left: 42%;
 	}
 
+  .project-delete {
+    float: right;
+    margin-right: 20%;
+  }
+
   .no-project h2 {
   	margin-left: 27%;
   }
@@ -160,6 +183,10 @@
   .date-deadline {
     width: 100%;
     font-size: 14px;
+  }
+
+  .project-delete {
+    margin-right: 30%;
   }
 
   .no-project h2 {

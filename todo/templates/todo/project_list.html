@@ -52,6 +52,15 @@
                   {% endif %}
                 </form>
               </div>
+              <div class="project-delete">
+                <form method="post">
+                  <input type="hidden" name="user" value="{{ request.user.username }}"/>
+                  <input type="hidden" name="project_id" value="{{ project.id }}"/>
+                  <input type="hidden" name="delete" value="true"/>
+                  {% csrf_token %}
+                  <input class="btn btn-danger" type="submit" value="delete project"/>
+                </form>
+              </div>
             </div>
           {% endfor %}
         {% else %}
