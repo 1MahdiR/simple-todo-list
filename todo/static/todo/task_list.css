@@ -132,6 +132,10 @@
   .no-task h2 {
   	margin-left: 33%;
   }
+
+  .no-task a {
+  	margin-left: 36%;
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -154,6 +158,10 @@
 
   .no-task h2 {
   	margin-left: 29%;
+  }
+
+  .no-task a {
+  	margin-left: 32%;
   }
 
   .date-submit {
