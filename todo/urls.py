@@ -10,5 +10,6 @@ urlpatterns = [
         path('add/task/', views.add_task, name="add_task"),
         path('add/project/', views.add_project, name="add_project"),
         path('projects/', views.project_list, name="project_list"),
+        path('tasks/', views.task_list, name="task_list"),
         path('ajax/get_projects', views.get_projects, name="get_projects"),
 ]

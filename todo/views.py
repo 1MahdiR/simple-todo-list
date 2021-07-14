@@ -33,7 +33,6 @@ def add_project(req):
         form = AddProjectForm(req.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            print(cd)
             new_project = Project.objects.create(name=cd['name'], description=cd['description'], deadline=cd['deadline'], user=req.user)
         return HttpResponseRedirect(reverse("todo:project_list"))
     else:
@@ -41,8 +40,26 @@ def add_project(req):
 
     return render(req, 'todo/add_project.html', {'form':form})
 
-def task_list(req, project_id):
-    pass
+@login_required
+def task_list(req):
+    if req.method == "POST":
+        username = req.POST.get('user')
+        task_pk = req.POST.get('task_id')
+        user = req.user
+        if username == user.username:
+            task = None
+            try:
+                task = Task.objects.get(pk=task_pk)
+            except Task.DoesNotExist:
+                pass
+            if task and task.user == user:
+                task.isDone = False if task.isDone else True
+                task.save()
+    task_list = Task.objects.filter(user=req.user).order_by("-submitDate")
+    if req.GET.get('project'):
+        project_pk = req.GET.get('project')
+        task_list = task_list.filter(project__pk=project_pk)
+    return render(req, 'todo/task_list.html', { 'task_list':task_list })
 
 @login_required
 def project_list(req):
