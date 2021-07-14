@@ -84,6 +84,24 @@
   display: inline-block;
 }
 
+.task-delete {
+
+  width: 14%;
+  display: inline-block;
+  float: none;
+}
+
+.task-delete .btn {
+
+	font-size: 20px;
+}
+
+.task-is-done {
+
+  width: 14%;
+  display: inline-block;
+}
+
 .task-is-done .btn {
 
 	font-size: 20px;
@@ -129,6 +147,11 @@
 		margin-left: 44%;
 	}
 
+  .task-delete {
+    float: right;
+    margin-right: 20%;
+  }
+
   .no-task h2 {
   	margin-left: 33%;
   }
@@ -162,6 +185,10 @@
 
   .no-task a {
   	margin-left: 32%;
+  }
+
+  .task-delete {
+    margin-right: 30%;
   }
 
   .date-submit {

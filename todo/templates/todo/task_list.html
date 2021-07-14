@@ -37,7 +37,7 @@
                     <i class="fa fa-pencil-square-o"></i>
                   </span>
                   {% if task.project %}
-                    <b>Task project:</b> <a href="#">{{ task.project.name }}</a>
+                    <b>Task project:</b> <a href="{% url 'todo:task_list' %}?project={{ task.project.pk }}">{{ task.project.name }}</a>
                   {% else %}
                     <b>Task project:</b> No project
                   {% endif %}
@@ -70,6 +70,15 @@
                   {% else %}
                     <input class="btn btn-primary" type="submit" value="undone task"/>
                   {% endif %}
+                </form>
+              </div>
+              <div class="task-delete">
+                <form method="post">
+                  <input type="hidden" name="user" value="{{ request.user.username }}"/>
+                  <input type="hidden" name="task_id" value="{{ task.id }}"/>
+                  <input type="hidden" name="delete" value="true"/>
+                  {% csrf_token %}
+                  <input class="btn btn-danger" type="submit" value="delete project"/>
                 </form>
               </div>
             </div>
