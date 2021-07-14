@@ -53,8 +53,11 @@ def task_list(req):
             except Task.DoesNotExist:
                 pass
             if task and task.user == user:
-                task.isDone = False if task.isDone else True
-                task.save()
+                if req.POST.get('delete'):
+                    task.delete()
+                else:
+                    task.isDone = False if task.isDone else True
+                    task.save()
     task_list = Task.objects.filter(user=req.user).order_by("-submitDate")
     if req.GET.get('project'):
         try:
