@@ -89,6 +89,31 @@
 	font-size: 20px;
 }
 
+.no-task h2 {
+  color: white;
+	margin-left: 41%;
+}
+
+.no-task a {
+  color: white;
+  padding: 12px;
+  background-color: #3579b5;
+  border-radius: 10px;
+	margin-left: 42%;
+  font-size: 24px;
+}
+
+.no-task a:hover {
+  color: white;
+  background-color: #0061b5;
+  box-shadow: 0 0.5px 10px grey;
+}
+
+.no-task a:visited {
+  color: white;
+}
+
+
 @media only screen and (max-width: 1200px) {
 
   .list-body {
@@ -96,13 +121,17 @@
   }
 
 	.list-body h1 {
-		margin-left: 32%;
+		margin-left: 39%;
 	}
 
 	.list-body .pencil-icon {
 
-		margin-left: 42%;
+		margin-left: 44%;
 	}
+
+  .no-task h2 {
+  	margin-left: 33%;
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -122,6 +151,10 @@
 
 		margin-left: 42%;
 	}
+
+  .no-task h2 {
+  	margin-left: 29%;
+  }
 
   .date-submit {
     width: 100%;
