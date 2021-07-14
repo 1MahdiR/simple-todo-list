@@ -55,7 +55,10 @@
             </div>
           {% endfor %}
         {% else %}
-          <h2>No projects yet!</h2>
+          <div class="no-project">
+              <h2>No projects yet!</h2><br/>
+              <a href="{% url 'todo:add_project' %}" style="text-decoration: none;">Start a project</a><br><br>
+          </div>
         {% endif %}
       </div>
     </div>

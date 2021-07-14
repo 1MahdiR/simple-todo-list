@@ -86,6 +86,30 @@
 	font-size: 20px;
 }
 
+.no-project h2 {
+  color: white;
+	margin-left: 39%;
+}
+
+.no-project a {
+  color: white;
+  padding: 12px;
+  background-color: #3579b5;
+  border-radius: 10px;
+	margin-left: 40.7%;
+  font-size: 24px;
+}
+
+.no-project a:hover {
+  color: white;
+  background-color: #0061b5;
+  box-shadow: 0 0.5px 10px grey;
+}
+
+.no-project a:visited {
+  color: white;
+}
+
 @media only screen and (max-width: 1200px) {
 
   .list-body {
@@ -100,6 +124,14 @@
 
 		margin-left: 42%;
 	}
+
+  .no-project h2 {
+  	margin-left: 27%;
+  }
+
+  .no-project a {
+  	margin-left: 30.4%;
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -111,7 +143,7 @@
 
 
 	.list-body h1 {
-		margin-left: 33%;
+		margin-left: 35%;
 		font-size: 28px;
 	}
 
@@ -128,5 +160,13 @@
   .date-deadline {
     width: 100%;
     font-size: 14px;
+  }
+
+  .no-project h2 {
+  	margin-left: 24%;
+  }
+
+  .no-project a {
+  	margin-left: 29%;
   }
 }
