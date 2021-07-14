@@ -57,8 +57,11 @@ def task_list(req):
                 task.save()
     task_list = Task.objects.filter(user=req.user).order_by("-submitDate")
     if req.GET.get('project'):
-        project_pk = req.GET.get('project')
-        task_list = task_list.filter(project__pk=project_pk)
+        try:
+            project_pk = req.GET.get('project')
+            task_list = task_list.filter(project__pk=project_pk)
+        except ValueError:
+            pass
     return render(req, 'todo/task_list.html', { 'task_list':task_list })
 
 @login_required
