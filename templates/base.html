@@ -60,12 +60,14 @@
 			</div>
 			{% else %}
 			<div class="header-user">
-				<a class="user" href="{% url 'account:login' %}">
-					sign-in
-				</a>
-				<a class="user" href="{% url 'account:register' %}">
-					sign-up
-				</a>
+				<div class="header-btn">
+					<a class="user" href="{% url 'account:login' %}">
+						sign-in
+					</a>
+					<a class="user" href="{% url 'account:register' %}">
+						sign-up
+					</a>
+				</div>
 			</div>
 			{% endif %}
 		</div>
