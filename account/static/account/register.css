@@ -67,14 +67,19 @@
 
 @media only screen and (max-width: 550px) {
 
+	.sign-up-body {
+
+		margin-left: 0;
+		margin-right: 0;
+	}
 
 	.sign-up-body h1 {
-		margin-left: 15%;
+		margin-left: 35%;
 		font-size: 32px;
 	}
 
 	.sign-up-body .user-icon {
 
-		margin-left: 32%;
+		margin-left: 42%;
 	}
 }
