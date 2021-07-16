@@ -189,6 +189,16 @@
     margin-right: 30%;
   }
 
+  .project-delete .btn {
+
+  	font-size: 14px;
+  }
+
+  .project-is-done .btn {
+
+  	font-size: 14px;
+  }
+
   .no-project h2 {
   	margin-left: 24%;
   }
