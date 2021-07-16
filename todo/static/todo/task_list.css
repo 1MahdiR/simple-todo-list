@@ -191,6 +191,16 @@
     margin-right: 30%;
   }
 
+  .task-delete .btn {
+
+  	font-size: 14px;
+  }
+
+  .task-is-done .btn {
+
+  	font-size: 14px;
+  }
+
   .date-submit {
     width: 100%;
     font-size: 14px;
